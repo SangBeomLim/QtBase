@@ -12,9 +12,11 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QSlider>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
 
@@ -34,6 +36,9 @@ public:
     QSlider *slider_volumn;
     QSlider *slider_control;
     QLabel *lb_timecode;
+    QToolButton *btn_add;
+    QTableView *playlistView;
+    QLabel *currentTrack;
 
     void setupUi(QWidget *AudioWidget)
     {
@@ -77,6 +82,15 @@ public:
         lb_timecode = new QLabel(AudioWidget);
         lb_timecode->setObjectName(QString::fromUtf8("lb_timecode"));
         lb_timecode->setGeometry(QRect(80, 160, 47, 14));
+        btn_add = new QToolButton(AudioWidget);
+        btn_add->setObjectName(QString::fromUtf8("btn_add"));
+        btn_add->setGeometry(QRect(300, 70, 24, 21));
+        playlistView = new QTableView(AudioWidget);
+        playlistView->setObjectName(QString::fromUtf8("playlistView"));
+        playlistView->setGeometry(QRect(50, 90, 256, 192));
+        currentTrack = new QLabel(AudioWidget);
+        currentTrack->setObjectName(QString::fromUtf8("currentTrack"));
+        currentTrack->setGeometry(QRect(330, 130, 47, 14));
 
         retranslateUi(AudioWidget);
 
@@ -94,6 +108,8 @@ public:
         btn_prev->setText(QApplication::translate("AudioWidget", "prev", nullptr));
         btn_pause->setText(QApplication::translate("AudioWidget", "pause", nullptr));
         lb_timecode->setText(QApplication::translate("AudioWidget", "TextLabel", nullptr));
+        btn_add->setText(QApplication::translate("AudioWidget", "+", nullptr));
+        currentTrack->setText(QString());
     } // retranslateUi
 
 };

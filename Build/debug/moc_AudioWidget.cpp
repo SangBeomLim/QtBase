@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_AudioWidget_t {
-    QByteArrayData data[10];
-    char stringdata0[124];
+    QByteArrayData data[8];
+    char stringdata0[107];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,21 +32,19 @@ struct qt_meta_stringdata_AudioWidget_t {
 static const qt_meta_stringdata_AudioWidget_t qt_meta_stringdata_AudioWidget = {
     {
 QT_MOC_LITERAL(0, 0, 11), // "AudioWidget"
-QT_MOC_LITERAL(1, 12, 11), // "WindowStart"
-QT_MOC_LITERAL(2, 24, 0), // ""
-QT_MOC_LITERAL(3, 25, 11), // "onPrevMusic"
-QT_MOC_LITERAL(4, 37, 11), // "onNextMusic"
-QT_MOC_LITERAL(5, 49, 10), // "onTimecode"
-QT_MOC_LITERAL(6, 60, 29), // "on_slider_volumn_valueChanged"
-QT_MOC_LITERAL(7, 90, 5), // "value"
-QT_MOC_LITERAL(8, 96, 19), // "on_btn_mute_clicked"
-QT_MOC_LITERAL(9, 116, 7) // "checked"
+QT_MOC_LITERAL(1, 12, 10), // "onTimecode"
+QT_MOC_LITERAL(2, 23, 0), // ""
+QT_MOC_LITERAL(3, 24, 29), // "on_slider_volumn_valueChanged"
+QT_MOC_LITERAL(4, 54, 5), // "value"
+QT_MOC_LITERAL(5, 60, 19), // "on_btn_mute_clicked"
+QT_MOC_LITERAL(6, 80, 7), // "checked"
+QT_MOC_LITERAL(7, 88, 18) // "on_btn_add_clicked"
 
     },
-    "AudioWidget\0WindowStart\0\0onPrevMusic\0"
-    "onNextMusic\0onTimecode\0"
+    "AudioWidget\0onTimecode\0\0"
     "on_slider_volumn_valueChanged\0value\0"
-    "on_btn_mute_clicked\0checked"
+    "on_btn_mute_clicked\0checked\0"
+    "on_btn_add_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -56,32 +54,24 @@ static const uint qt_meta_data_AudioWidget[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
-
- // signals: name, argc, parameters, tag, flags
-       1,    0,   44,    2, 0x06 /* Public */,
+       0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   45,    2, 0x0a /* Public */,
-       4,    0,   46,    2, 0x0a /* Public */,
-       5,    0,   47,    2, 0x0a /* Public */,
-       6,    1,   48,    2, 0x08 /* Private */,
-       8,    1,   51,    2, 0x08 /* Private */,
-
- // signals: parameters
-    QMetaType::Void,
+       1,    0,   34,    2, 0x0a /* Public */,
+       3,    1,   35,    2, 0x08 /* Private */,
+       5,    1,   38,    2, 0x08 /* Private */,
+       7,    0,   41,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    4,
+    QMetaType::Void, QMetaType::Bool,    6,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    7,
-    QMetaType::Void, QMetaType::Bool,    9,
 
        0        // eod
 };
@@ -92,22 +82,11 @@ void AudioWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         AudioWidget *_t = static_cast<AudioWidget *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->WindowStart(); break;
-        case 1: _t->onPrevMusic(); break;
-        case 2: _t->onNextMusic(); break;
-        case 3: _t->onTimecode(); break;
-        case 4: _t->on_slider_volumn_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 5: _t->on_btn_mute_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 0: _t->onTimecode(); break;
+        case 1: _t->on_slider_volumn_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 2: _t->on_btn_mute_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 3: _t->on_btn_add_clicked(); break;
         default: ;
-        }
-    } else if (_c == QMetaObject::IndexOfMethod) {
-        int *result = reinterpret_cast<int *>(_a[0]);
-        {
-            using _t = void (AudioWidget::*)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&AudioWidget::WindowStart)) {
-                *result = 0;
-                return;
-            }
         }
     }
 }
@@ -141,21 +120,15 @@ int AudioWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 4)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 6;
+        _id -= 4;
     }
     return _id;
-}
-
-// SIGNAL 0
-void AudioWidget::WindowStart()
-{
-    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE
